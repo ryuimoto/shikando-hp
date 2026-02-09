@@ -363,9 +363,9 @@ function cleanHtml(html) {
   html = html.replace(/<link[^>]*id=['"]admin-bar[^>]*>/g, '');
   html = html.replace(/<style[^>]*id=['"]admin-bar[^>]*>[\s\S]*?<\/style>/g, '');
 
-  // wp-emoji
-  html = html.replace(/<script[^>]*>[\s\S]*?wp-emoji[\s\S]*?<\/script>/g, '');
-  html = html.replace(/<style[^>]*>[\s\S]*?wp-emoji[\s\S]*?<\/style>/g, '');
+  // wp-emoji (boundary-safe: don't cross </script> or </style> boundaries)
+  html = html.replace(/<script[^>]*>(?:(?!<\/script>)[\s\S])*?wp-emoji(?:(?!<\/script>)[\s\S])*?<\/script>/g, '');
+  html = html.replace(/<style[^>]*>(?:(?!<\/style>)[\s\S])*?wp-emoji(?:(?!<\/style>)[\s\S])*?<\/style>/g, '');
 
   // REST API / oEmbed / wp-json リンク
   html = html.replace(/<link[^>]*rel=['"]https:\/\/api\.w\.org\/['"][^>]*>/g, '');

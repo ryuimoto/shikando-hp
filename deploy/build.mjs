@@ -220,8 +220,14 @@ async function main() {
   console.log('  テーマアセットをコピー中...');
   await copyThemeStaticAssets();
 
-  // 7. robots.txt と favicon 生成
+  // 7. robots.txt 生成
   await writeFile(join(OUTPUT, 'robots.txt'), 'User-agent: *\nAllow: /\n', 'utf-8');
+
+  // 8. vercel.json を public/ にコピー
+  const vercelJsonSrc = join(__dirname, 'vercel.json');
+  if (existsSync(vercelJsonSrc)) {
+    await copyFile(vercelJsonSrc, join(OUTPUT, 'vercel.json'));
+  }
 
   console.log('');
   console.log('  ================================');
@@ -229,7 +235,7 @@ async function main() {
   console.log(`  出力先: ${OUTPUT}`);
   console.log('');
   console.log('  次のステップ:');
-  console.log('    cd deploy && npx vercel');
+  console.log('    cd deploy/public && npx vercel');
   console.log('');
 }
 

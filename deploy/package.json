@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "deploy": "node build.mjs && npx vercel public/ --prod",
-    "preview": "npx vercel public/"
+    "deploy": "node build.mjs && cd public && npx vercel --prod",
+    "preview": "node build.mjs && cd public && npx vercel"
   }
 }

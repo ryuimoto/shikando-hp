@@ -1,0 +1,163 @@
+/* ==========================================================================
+   士観道 (Shikando) - Custom CSS
+   ========================================================================== */
+
+/* --- Base / Global --- */
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+p, li, td, th, blockquote {
+	word-break: break-all;
+	overflow-wrap: break-word;
+}
+
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 0.2em;
+	transition: color 0.3s ease;
+}
+
+/* --- Header --- */
+.wp-block-site-title a {
+	font-family: var(--wp--preset--font-family--shippori-mincho) !important;
+	letter-spacing: 0.15em !important;
+}
+
+/* --- Gold separator --- */
+.wp-block-separator.is-style-gold-line {
+	border-color: var(--wp--preset--color--accent-1) !important;
+	border-width: 0 0 1px 0;
+	width: 80px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-block-separator.is-style-gold-line.alignwide,
+.wp-block-separator.is-style-gold-line.alignfull {
+	width: 100%;
+}
+
+/* --- Washi card hover --- */
+.wp-block-group.is-style-washi-card {
+	transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.wp-block-group.is-style-washi-card:hover {
+	box-shadow: 0 4px 30px rgba(26, 26, 26, 0.12);
+	transform: translateY(-2px);
+}
+
+/* --- Button --- */
+.wp-block-button__link {
+	border-radius: 2px !important;
+	transition: all 0.3s ease;
+	letter-spacing: 0.1em;
+}
+
+/* --- Table styling for pricing --- */
+.wp-block-table table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.wp-block-table thead {
+	background-color: var(--wp--preset--color--accent-2);
+	color: var(--wp--preset--color--base);
+}
+
+.wp-block-table th {
+	font-family: var(--wp--preset--font-family--noto-sans-jp);
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	padding: 1rem 1.5rem;
+	text-align: left;
+}
+
+.wp-block-table td {
+	padding: 1rem 1.5rem;
+	border-bottom: 1px solid var(--wp--preset--color--accent-6);
+}
+
+.wp-block-table tbody tr:hover {
+	background-color: rgba(197, 165, 114, 0.05);
+}
+
+/* --- Cover block hero enhancement --- */
+.wp-block-cover.has-accent-2-background-color::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image:
+		radial-gradient(circle at 20% 80%, rgba(197, 165, 114, 0.03) 0%, transparent 50%),
+		radial-gradient(circle at 80% 20%, rgba(139, 127, 181, 0.03) 0%, transparent 50%);
+	pointer-events: none;
+	z-index: 1;
+}
+
+.wp-block-cover .wp-block-cover__inner-container {
+	position: relative;
+	z-index: 2;
+}
+
+/* --- Navigation --- */
+.wp-block-navigation .wp-block-navigation-item__content {
+	letter-spacing: 0.05em;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	background-color: var(--wp--preset--color--accent-2) !important;
+}
+
+/* --- Focus styles --- */
+:where(.wp-site-blocks *:focus) {
+	outline-width: 2px;
+	outline-style: solid;
+	outline-color: var(--wp--preset--color--accent-1);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--wp--preset--color--base);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--wp--preset--color--accent-4);
+	border-radius: 4px;
+}
+
+/* --- Fade in animation --- */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+main > .wp-block-group > .wp-block-group,
+main > .wp-block-group > .wp-block-cover {
+	animation: fadeInUp 0.8s ease-out;
+}
+
+/* --- Responsive --- */
+@media (max-width: 781px) {
+	.wp-block-cover {
+		min-height: 70vh !important;
+	}
+
+	.wp-block-group.is-style-washi-card {
+		padding: var(--wp--preset--spacing--40) !important;
+	}
+}

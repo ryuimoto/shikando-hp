@@ -15,7 +15,7 @@
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"constrained","contentSize":"680px"}} -->
 		<div class="wp-block-group">
 			<!-- wp:paragraph {"align":"center","style":{"typography":{"letterSpacing":"0.3em","fontWeight":"400"}},"fontSize":"small","textColor":"accent-1"} -->
-			<p class="has-text-align-center has-accent-1-color has-text-color has-small-font-size" style="font-weight:400;letter-spacing:0.3em">四柱推命・八字</p>
+			<p class="has-text-align-center has-accent-1-color has-text-color has-small-font-size" style="font-weight:400;letter-spacing:0.3em">陰陽五行・八字 / タローデパリ</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontFamily":"var:preset|font-family|shippori-mincho","letterSpacing":"0.2em","lineHeight":"1.6","fontWeight":"700"}},"fontSize":"xx-large","textColor":"base"} -->

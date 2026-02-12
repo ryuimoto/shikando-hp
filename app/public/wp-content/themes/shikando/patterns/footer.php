@@ -23,7 +23,7 @@
 			<h2 class="wp-block-heading has-accent-1-color has-text-color has-x-large-font-size" style="font-family:var(--wp--preset--font-family--shippori-mincho);letter-spacing:0.15em">士観道</h2>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2"}},"fontSize":"small"} -->
-			<p class="has-small-font-size" style="line-height:2">四柱推命・八字による<br>本格オンライン占い<br>電話占い・チャット占い</p>
+			<p class="has-small-font-size" style="line-height:2">陰陽五行・八字 / タローデパリによる<br>本格オンライン占い<br>電話占い・チャット占い</p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->

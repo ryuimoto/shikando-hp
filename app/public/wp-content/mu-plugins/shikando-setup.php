@@ -76,7 +76,7 @@ function shikando_run_setup() {
 
 	// 2. サイト設定
 	update_option( 'blogname', '士観道（しかんどう）' );
-	update_option( 'blogdescription', '四柱推命・八字による本格オンライン占い' );
+	update_option( 'blogdescription', '陰陽五行・八字 / タローデパリによる本格オンライン占い' );
 	update_option( 'timezone_string', 'Asia/Tokyo' );
 	update_option( 'date_format', 'Y年n月j日' );
 	update_option( 'time_format', 'H:i' );
@@ -187,7 +187,7 @@ function shikando_run_setup() {
 
 	// 7. カテゴリ作成
 	$categories = array(
-		'四柱推命入門' => 'shichusuimei-intro',
+		'占術入門' => 'senjutsu-intro',
 		'運勢・運気'   => 'unsei',
 		'占いコラム'   => 'column',
 		'お知らせ'     => 'news',
@@ -224,7 +224,7 @@ function shikando_profile_content() {
 <!-- /wp:separator -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
-<p class="has-medium-font-size" style="line-height:2.2">士観道（しかんどう）の占い師プロフィールをここに記載します。四柱推命・八字を専門とし、長年の研鑽を重ねてまいりました。</p>
+<p class="has-medium-font-size" style="line-height:2.2">士観道（しかんどう）の占い師プロフィールをここに記載します。陰陽五行・八字とタローデパリを専門とし、長年の研鑽を重ねてまいりました。</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3,"style":{"typography":{"letterSpacing":"0.1em"}},"fontSize":"large"} -->
@@ -233,7 +233,8 @@ function shikando_profile_content() {
 
 <!-- wp:list {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
 <ul class="has-medium-font-size" style="line-height:2.2">
-<li>四柱推命の研究歴：○年</li>
+<li>陰陽五行・八字の研究歴：○年</li>
+<li>タローデパリの研究歴：○年</li>
 <li>鑑定実績：○○件以上</li>
 <li>資格・認定：○○</li>
 </ul>
@@ -244,7 +245,7 @@ function shikando_profile_content() {
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
-<p class="has-medium-font-size" style="line-height:2.2">四柱推命は単なる占いではなく、自分自身を深く理解するための道具です。生まれ持った命式を知ることで、自分の強み・弱みを理解し、より良い人生の選択ができるようになります。</p>
+<p class="has-medium-font-size" style="line-height:2.2">陰陽五行・八字は単なる占いではなく、自分自身を深く理解するための道具です。生まれ持った命式を知ることで、自分の強み・弱みを理解し、より良い人生の選択ができるようになります。タローデパリのカードリーディングでは、今この瞬間に必要なメッセージを受け取ることができます。</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
@@ -373,7 +374,7 @@ function shikando_tokushoho_content() {
 <tr><td><strong>所在地</strong></td><td>（住所を記載）</td></tr>
 <tr><td><strong>電話番号</strong></td><td>（電話番号を記載）</td></tr>
 <tr><td><strong>メールアドレス</strong></td><td>（メールアドレスを記載）</td></tr>
-<tr><td><strong>サービス内容</strong></td><td>四柱推命・八字による占い鑑定（電話占い・チャット占い）</td></tr>
+<tr><td><strong>サービス内容</strong></td><td>陰陽五行・八字 / タローデパリによる占い鑑定（電話占い・チャット占い）</td></tr>
 <tr><td><strong>料金</strong></td><td>サービス・料金ページをご確認ください</td></tr>
 <tr><td><strong>お支払い方法</strong></td><td>（お支払い方法を記載）</td></tr>
 <tr><td><strong>キャンセルポリシー</strong></td><td>鑑定前日までのキャンセルは無料。当日キャンセルは料金の50%をいただきます。</td></tr>

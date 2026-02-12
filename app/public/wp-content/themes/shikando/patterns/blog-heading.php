@@ -14,7 +14,7 @@
 	<h1 class="wp-block-heading has-text-align-center has-x-large-font-size" style="letter-spacing:0.15em">ブログ・コラム</h1>
 	<!-- /wp:heading -->
 	<!-- wp:paragraph {"align":"center","textColor":"accent-4","fontSize":"medium"} -->
-	<p class="has-text-align-center has-accent-4-color has-text-color has-medium-font-size">四柱推命の知識や運勢のヒントをお届けします</p>
+	<p class="has-text-align-center has-accent-4-color has-text-color has-medium-font-size">占術の知識や運勢のヒントをお届けします</p>
 	<!-- /wp:paragraph -->
 	<!-- wp:separator {"className":"is-style-gold-line"} -->
 	<hr class="wp-block-separator is-style-gold-line"/>

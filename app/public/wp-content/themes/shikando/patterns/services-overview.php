@@ -28,7 +28,7 @@
 				<h3 class="wp-block-heading has-text-align-center has-accent-2-color has-text-color has-large-font-size" style="letter-spacing:0.1em">電話占い</h3>
 				<!-- /wp:heading -->
 				<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
-				<p class="has-text-align-center has-medium-font-size">声を通じてあなたのエネルギーを読み取り、四柱推命に基づいた詳細な鑑定をお届けします。</p>
+				<p class="has-text-align-center has-medium-font-size">声を通じてあなたのエネルギーを読み取り、陰陽五行・八字やタローデパリに基づいた詳細な鑑定をお届けします。</p>
 				<!-- /wp:paragraph -->
 				<!-- wp:paragraph {"align":"center","textColor":"accent-1","fontSize":"large","style":{"typography":{"fontWeight":"500"}}} -->
 				<p class="has-text-align-center has-accent-1-color has-text-color has-large-font-size" style="font-weight:500">30分 ¥5,000〜</p>

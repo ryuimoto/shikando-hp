@@ -23,10 +23,16 @@
 		<!-- wp:column {"width":"60%"} -->
 		<div class="wp-block-column" style="flex-basis:60%">
 			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
-			<p class="has-medium-font-size" style="line-height:2.2">四柱推命（しちゅうすいめい）は、生まれた年・月・日・時の四つの柱から、その人の持って生まれた運命を読み解く東洋占術の最高峰です。</p>
+			<p class="has-medium-font-size" style="line-height:2.2">陰陽五行・八字は、生まれた年・月・日・時の四つの柱と五行の調和から、その人の持って生まれた運命を読み解く東洋占術です。さらにタローデパリのカードリーディングを通じて、今この瞬間のメッセージをお届けします。</p>
+			<!-- /wp:paragraph -->
+			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
+			<p class="has-medium-font-size" style="line-height:2.2">士観道とは、人を観る事に特化したロジックであり、今貴方がどこにいるのか、これからどうするのかを一緒に見ていきながら、後ろ向きを前向きに持っていき、どうすれば貴方がバランス良くインプットやアウトプットをすれば良いのかを考えて行きましょう。</p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
 			<p class="has-medium-font-size" style="line-height:2.2">士観道では、この古来の知恵を現代に活かし、あなたの才能・適性・運気の流れを明確にお伝えします。恋愛・仕事・人間関係など、人生のあらゆる悩みに寄り添い、最善の道を一緒に探してまいります。</p>
+			<!-- /wp:paragraph -->
+			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
+			<p class="has-medium-font-size" style="line-height:2.2">生年月日と生まれた時間――これが未来に向いている星ですので、ぜひ事前にお調べいただけると助かります。時間がわからないと、かなりの精度が落ちてしまいますので、ご了承ください。</p>
 			<!-- /wp:paragraph -->
 			<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
 			<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">

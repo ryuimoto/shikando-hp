@@ -182,6 +182,9 @@ async function main() {
         html = replaceContactForm(html);
       }
 
+      // コンテンツ置換（WP DB内の旧テキストを修正）
+      html = replaceContent(html);
+
       // WordPress不要要素を除去
       html = cleanHtml(html);
 
@@ -320,10 +323,13 @@ function normalizeUrl(url, baseUrl) {
  * HTML内のURLを書き換え
  */
 function rewriteUrls(html, baseUrl) {
-  // 絶対URL → 相対パス
-  html = html.replaceAll(baseUrl, '');
-  html = html.replaceAll(`http://${SITE_DOMAIN}`, '');
-  html = html.replaceAll(`//${SITE_DOMAIN}`, '');
+  // 絶対URL → 相対パス（ドメインのみの場合は "/" に変換）
+  html = html.replaceAll(baseUrl + '/', '/');
+  html = html.replaceAll(baseUrl, '/');
+  html = html.replaceAll(`http://${SITE_DOMAIN}/`, '/');
+  html = html.replaceAll(`http://${SITE_DOMAIN}`, '/');
+  html = html.replaceAll(`//${SITE_DOMAIN}/`, '/');
+  html = html.replaceAll(`//${SITE_DOMAIN}`, '/');
 
   // クエリ文字列の除去 (キャッシュバスター)
   html = html.replace(/(\.css|\.js)\?ver=[^"'&\s]+/g, '$1');
@@ -351,6 +357,31 @@ function replaceContactForm(html) {
 
   // FormspreeのCSSを</head>の前に挿入
   html = html.replace('</head>', FORMSPREE_CSS + '\n</head>');
+
+  return html;
+}
+
+/**
+ * コンテンツ置換（WP DB内の旧テキストを更新）
+ */
+function replaceContent(html) {
+  // 占術名の変更: 四柱推命 → 陰陽五行・八字 / タローデパリ
+  const replacements = [
+    ['四柱推命・八字による', '陰陽五行・八字 / タローデパリによる'],
+    ['四柱推命・八字', '陰陽五行・八字 / タローデパリ'],
+    ['四柱推命に基づいた', '陰陽五行・八字やタローデパリに基づいた'],
+    ['四柱推命（しちゅうすいめい）は、生まれた年・月・日・時の四つの柱から、その人の持って生まれた運命を読み解く東洋占術の最高峰です。',
+     '陰陽五行・八字は、生まれた年・月・日・時の四つの柱と五行の調和から、その人の持って生まれた運命を読み解く東洋占術です。さらにタローデパリのカードリーディングを通じて、今この瞬間のメッセージをお届けします。'],
+    ['四柱推命は単なる占いではなく', '陰陽五行・八字は単なる占いではなく'],
+    ['四柱推命の研究歴', '陰陽五行・八字の研究歴'],
+    ['四柱推命の知識や', '占術の知識や'],
+    ['四柱推命入門', '占術入門'],
+    ['四柱推命を専門とし', '陰陽五行・八字とタローデパリを専門とし'],
+  ];
+
+  for (const [from, to] of replacements) {
+    html = html.replaceAll(from, to);
+  }
 
   return html;
 }

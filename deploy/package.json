@@ -2,7 +2,7 @@
   "name": "shikando-hp",
   "version": "1.0.0",
   "private": true,
-  "description": "士観道（しかんどう）- 四柱推命・八字 占いサイト",
+  "description": "士観道（しかんどう）- 陰陽五行・八字 / タローデパリ 占いサイト",
   "type": "module",
   "scripts": {
     "build": "node build.mjs",

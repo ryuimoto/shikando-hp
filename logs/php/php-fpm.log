@@ -20,3 +20,8 @@
 [13-Feb-2026 11:35:29] NOTICE: exiting, bye-bye!
 [13-Feb-2026 11:51:51] NOTICE: fpm is running, pid 4074
 [13-Feb-2026 11:51:51] NOTICE: ready to handle connections
+[13-Feb-2026 15:12:21] NOTICE: Terminating ...
+[13-Feb-2026 15:12:21] NOTICE: Terminating ...
+[13-Feb-2026 15:12:21] NOTICE: exiting, bye-bye!
+[13-Feb-2026 15:12:22] NOTICE: fpm is running, pid 91889
+[13-Feb-2026 15:12:22] NOTICE: ready to handle connections

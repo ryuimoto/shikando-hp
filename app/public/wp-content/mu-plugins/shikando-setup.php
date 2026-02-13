@@ -50,6 +50,22 @@ function shikando_setup_page() {
 		return;
 	}
 
+	// ページ内容更新実行
+	if ( isset( $_POST['shikando_update_pages'] ) && check_admin_referer( 'shikando_setup_nonce' ) ) {
+		$results = shikando_update_pages();
+		echo '<div class="wrap"><h1>ページ内容を更新しました</h1>';
+		echo '<div class="notice notice-success"><p>更新が完了しました。</p></div>';
+		echo '<ul style="list-style:disc;padding-left:20px;">';
+		foreach ( $results as $result ) {
+			echo '<li>' . esc_html( $result ) . '</li>';
+		}
+		echo '</ul>';
+		echo '<p><a href="' . home_url() . '" class="button button-primary">サイトを確認する</a> ';
+		echo '<a href="' . admin_url() . '" class="button">管理画面へ</a></p>';
+		echo '</div>';
+		return;
+	}
+
 	// セットアップ画面
 	echo '<div class="wrap"><h1>士観道 初期セットアップ</h1>';
 	echo '<p>以下の設定を自動で行います:</p>';
@@ -64,7 +80,16 @@ function shikando_setup_page() {
 	echo '<form method="post">';
 	wp_nonce_field( 'shikando_setup_nonce' );
 	echo '<p><input type="submit" name="shikando_run_setup" value="セットアップを実行" class="button button-primary button-hero"></p>';
-	echo '</form></div>';
+	echo '</form>';
+
+	echo '<hr style="margin:2em 0">';
+	echo '<h2>ページ内容を更新</h2>';
+	echo '<p>既存ページの内容を最新のテンプレートで上書きします。</p>';
+	echo '<form method="post">';
+	wp_nonce_field( 'shikando_setup_nonce' );
+	echo '<p><input type="submit" name="shikando_update_pages" value="ページ内容を更新" class="button button-secondary button-hero"></p>';
+	echo '</form>';
+	echo '</div>';
 }
 
 function shikando_run_setup() {
@@ -204,6 +229,35 @@ function shikando_run_setup() {
 	$news_term = get_term_by( 'slug', 'news', 'category' );
 	if ( $news_term ) {
 		update_option( 'default_category', $news_term->term_id );
+	}
+
+	return $results;
+}
+
+// --- ページ内容更新 ---
+
+function shikando_update_pages() {
+	$results = array();
+
+	$updates = array(
+		'profile'        => 'shikando_profile_content',
+		'services'       => 'shikando_services_content',
+		'contact'        => 'shikando_contact_content',
+		'privacy-policy' => 'shikando_privacy_content',
+		'tokushoho'      => 'shikando_tokushoho_content',
+	);
+
+	foreach ( $updates as $slug => $content_func ) {
+		$page = get_page_by_path( $slug );
+		if ( $page ) {
+			wp_update_post( array(
+				'ID'           => $page->ID,
+				'post_content' => call_user_func( $content_func ),
+			) );
+			$results[] = 'ページ「' . $page->post_title . '」を更新しました';
+		} else {
+			$results[] = 'ページ「' . $slug . '」が見つかりません（スキップ）';
+		}
 	}
 
 	return $results;

@@ -76,7 +76,7 @@ function shikando_run_setup() {
 
 	// 2. サイト設定
 	update_option( 'blogname', '士観道（しかんどう）' );
-	update_option( 'blogdescription', '陰陽五行・八字 / タローデパリによる本格オンライン占い' );
+	update_option( 'blogdescription', '陰陽五行・八字 / タローデパリによる本格オンラインセッション' );
 	update_option( 'timezone_string', 'Asia/Tokyo' );
 	update_option( 'date_format', 'Y年n月j日' );
 	update_option( 'time_format', 'H:i' );
@@ -96,7 +96,7 @@ function shikando_run_setup() {
 			'content' => '',
 		),
 		array(
-			'title'   => '占い師プロフィール',
+			'title'   => 'プロフィール',
 			'slug'    => 'profile',
 			'content' => shikando_profile_content(),
 		),
@@ -189,7 +189,7 @@ function shikando_run_setup() {
 	$categories = array(
 		'占術入門' => 'senjutsu-intro',
 		'運勢・運気'   => 'unsei',
-		'占いコラム'   => 'column',
+		'コラム'       => 'column',
 		'お知らせ'     => 'news',
 	);
 
@@ -216,7 +216,7 @@ function shikando_profile_content() {
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
 
 <!-- wp:heading {"level":2,"style":{"typography":{"letterSpacing":"0.1em"}},"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size" style="letter-spacing:0.1em">占い師について</h2>
+<h2 class="wp-block-heading has-x-large-font-size" style="letter-spacing:0.1em">プロフィール</h2>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"className":"is-style-gold-line","style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|50"}}}} -->
@@ -224,7 +224,7 @@ function shikando_profile_content() {
 <!-- /wp:separator -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
-<p class="has-medium-font-size" style="line-height:2.2">士観道（しかんどう）の占い師プロフィールをここに記載します。陰陽五行・八字とタローデパリを専門とし、長年の研鑽を重ねてまいりました。</p>
+<p class="has-medium-font-size" style="line-height:2.2">士観道（しかんどう）のプロフィールをここに記載します。陰陽五行・八字とタローデパリを専門とし、長年の研鑽を重ねてまいりました。</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3,"style":{"typography":{"letterSpacing":"0.1em"}},"fontSize":"large"} -->
@@ -233,19 +233,41 @@ function shikando_profile_content() {
 
 <!-- wp:list {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
 <ul class="has-medium-font-size" style="line-height:2.2">
-<li>陰陽五行・八字の研究歴：○年</li>
-<li>タローデパリの研究歴：○年</li>
-<li>鑑定実績：○○件以上</li>
-<li>資格・認定：○○</li>
+<li>陰陽五行・タローデパリの研究歴：7年</li>
+<li>資格・認定：タローデパリ認定講師</li>
 </ul>
 <!-- /wp:list -->
 
 <!-- wp:heading {"level":3,"style":{"typography":{"letterSpacing":"0.1em"}},"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="letter-spacing:0.1em">占いへの想い</h3>
+<h3 class="wp-block-heading has-large-font-size" style="letter-spacing:0.1em">私の歩み</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
-<p class="has-medium-font-size" style="line-height:2.2">陰陽五行・八字は単なる占いではなく、自分自身を深く理解するための道具です。生まれ持った命式を知ることで、自分の強み・弱みを理解し、より良い人生の選択ができるようになります。タローデパリのカードリーディングでは、今この瞬間に必要なメッセージを受け取ることができます。</p>
+<p class="has-medium-font-size" style="line-height:2.2">50歳という節目、私は大切な幼馴染の頼みを受け、迷うことなく会社の代表を引き受けました。しかし、それは想像を絶する困難の始まりでした。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
+<p class="has-medium-font-size" style="line-height:2.2">名前貸しの代表として過ごした2年後、私を待っていたのは毎月届く督促状と、逃れられない裁判の日々。暗闇の中を彷徨っていた私を救ってくれたのは、ある方との奇跡的な出会いでした。その助けがあり、今の私があります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"2.2","fontSize":"1.3em"}},"textColor":"accent-1"} -->
+<p class="has-text-align-center has-accent-1-color has-text-color" style="font-size:1.3em;line-height:2.2">「今度は私が、誰かの力になりたい」</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
+<p class="has-medium-font-size" style="line-height:2.2">この実体験から、対話を通じて困り事に寄り添うため、占術の門を叩き、カウンセラーとしての道を歩み始めました。そこで導いてくださった3人の最高の師との出会いが、今の私の土台となっています。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
+<p class="has-medium-font-size" style="line-height:2.2">人生の折り返し地点を過ぎた今、私が精一杯できること。それが「士観道」です。<br>今、この言葉を目にしてくださっているあなたへ。<br>それは、ご自身を見つめ直すための大切なタイミングかもしれません。一歩踏み出す勇気に、私は全力で寄り添います。このご縁に、心から感謝いたします。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"typography":{"letterSpacing":"0.1em"}},"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size" style="letter-spacing:0.1em">セッションへの想い</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
+<p class="has-medium-font-size" style="line-height:2.2">陰陽五行・八字は単なる占術ではなく、自分自身を深く理解するための道具です。生まれ持った命式を知ることで、自分の強み・弱みを理解し、より良い人生の選択ができるようになります。タローデパリのカードリーディングでは、今この瞬間に必要なメッセージを受け取ることができます。</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
@@ -303,7 +325,7 @@ function shikando_contact_content() {
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size">営業時間: 10:00 - 22:00<br>定休日: 不定休<br>鑑定方法: 電話占い / チャット占い</p>
+<p class="has-medium-font-size">営業時間: 10:00 - 22:00<br>定休日: 不定休<br>セッション方法: 対面セッション / 電話セッション / チャットセッション</p>
 <!-- /wp:paragraph -->
 
 </div>
@@ -374,7 +396,7 @@ function shikando_tokushoho_content() {
 <tr><td><strong>所在地</strong></td><td>（住所を記載）</td></tr>
 <tr><td><strong>電話番号</strong></td><td>（電話番号を記載）</td></tr>
 <tr><td><strong>メールアドレス</strong></td><td>（メールアドレスを記載）</td></tr>
-<tr><td><strong>サービス内容</strong></td><td>陰陽五行・八字 / タローデパリによる占い鑑定（電話占い・チャット占い）</td></tr>
+<tr><td><strong>サービス内容</strong></td><td>陰陽五行・八字 / タローデパリによるセッション（対面セッション・電話セッション・チャットセッション）</td></tr>
 <tr><td><strong>料金</strong></td><td>サービス・料金ページをご確認ください</td></tr>
 <tr><td><strong>お支払い方法</strong></td><td>（お支払い方法を記載）</td></tr>
 <tr><td><strong>キャンセルポリシー</strong></td><td>鑑定前日までのキャンセルは無料。当日キャンセルは料金の50%をいただきます。</td></tr>

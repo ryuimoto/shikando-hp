@@ -23,7 +23,7 @@
 			<h2 class="wp-block-heading has-accent-1-color has-text-color has-x-large-font-size" style="font-family:var(--wp--preset--font-family--shippori-mincho);letter-spacing:0.15em">士観道</h2>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2"}},"fontSize":"small"} -->
-			<p class="has-small-font-size" style="line-height:2">陰陽五行・八字 / タローデパリによる<br>本格オンライン占い<br>電話占い・チャット占い</p>
+			<p class="has-small-font-size" style="line-height:2">陰陽五行・八字 / タローデパリによる<br>本格オンラインセッション<br>対面セッション・電話セッション・チャットセッション</p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -35,7 +35,7 @@
 			<!-- /wp:heading -->
 			<!-- wp:navigation {"textColor":"base","overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"small","layout":{"type":"flex","orientation":"vertical"}} -->
 				<!-- wp:navigation-link {"label":"ホーム","url":"/"} /-->
-				<!-- wp:navigation-link {"label":"占い師紹介","url":"/profile/"} /-->
+				<!-- wp:navigation-link {"label":"プロフィール","url":"/profile/"} /-->
 				<!-- wp:navigation-link {"label":"サービス・料金","url":"/services/"} /-->
 				<!-- wp:navigation-link {"label":"ブログ・コラム","url":"/blog/"} /-->
 				<!-- wp:navigation-link {"label":"ご予約・お問い合わせ","url":"/contact/"} /-->

@@ -3,7 +3,7 @@
  * Title: サービス・料金表
  * Slug: shikando/pricing-table
  * Categories: shikando
- * Description: 電話占い・チャット占いの料金表
+ * Description: 電話セッション・チャットセッションの料金表
  *
  * @package Shikando
  */
@@ -12,7 +12,7 @@
 <div class="wp-block-group" style="margin-top:0;margin-bottom:0">
 
 	<!-- wp:heading {"level":3,"style":{"typography":{"letterSpacing":"0.1em"}},"fontSize":"large","textColor":"accent-2"} -->
-	<h3 class="wp-block-heading has-accent-2-color has-text-color has-large-font-size" style="letter-spacing:0.1em">電話占い メニュー</h3>
+	<h3 class="wp-block-heading has-accent-2-color has-text-color has-large-font-size" style="letter-spacing:0.1em">電話セッション メニュー</h3>
 	<!-- /wp:heading -->
 
 	<!-- wp:table {"hasFixedLayout":true,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"fontSize":"medium"} -->
@@ -32,7 +32,7 @@
 	<!-- /wp:table -->
 
 	<!-- wp:heading {"level":3,"style":{"typography":{"letterSpacing":"0.1em"}},"fontSize":"large","textColor":"accent-2"} -->
-	<h3 class="wp-block-heading has-accent-2-color has-text-color has-large-font-size" style="letter-spacing:0.1em">チャット占い メニュー</h3>
+	<h3 class="wp-block-heading has-accent-2-color has-text-color has-large-font-size" style="letter-spacing:0.1em">チャットセッション メニュー</h3>
 	<!-- /wp:heading -->
 
 	<!-- wp:table {"hasFixedLayout":true,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"fontSize":"medium"} -->

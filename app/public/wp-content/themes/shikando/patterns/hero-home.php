@@ -35,7 +35,7 @@
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"2"}},"fontSize":"small","textColor":"accent-4"} -->
-			<p class="has-text-align-center has-accent-4-color has-text-color has-small-font-size" style="line-height:2">電話占い・チャット占いで<br>いつでもどこからでもご相談いただけます</p>
+			<p class="has-text-align-center has-accent-4-color has-text-color has-small-font-size" style="line-height:2">対面セッション・電話セッション・チャットセッションで<br>いつでもどこからでもご相談いただけます</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->

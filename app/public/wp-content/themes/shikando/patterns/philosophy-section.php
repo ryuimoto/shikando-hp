@@ -3,7 +3,7 @@
  * Title: 士観道の想い
  * Slug: shikando/philosophy-section
  * Categories: shikando
- * Description: 士観道の占いの哲学・想いセクション
+ * Description: 士観道のセッションの哲学・想いセクション
  *
  * @package Shikando
  */
@@ -15,7 +15,7 @@
 		<!-- wp:column {"width":"40%"} -->
 		<div class="wp-block-column" style="flex-basis:40%">
 			<!-- wp:heading {"style":{"typography":{"letterSpacing":"0.15em","lineHeight":"1.6"}},"fontSize":"x-large","textColor":"accent-1"} -->
-			<h2 class="wp-block-heading has-accent-1-color has-text-color has-x-large-font-size" style="letter-spacing:0.15em;line-height:1.6">士観道の<br>占いとは</h2>
+			<h2 class="wp-block-heading has-accent-1-color has-text-color has-x-large-font-size" style="letter-spacing:0.15em;line-height:1.6">士観道の<br>セッションとは</h2>
 			<!-- /wp:heading -->
 		</div>
 		<!-- /wp:column -->
@@ -23,7 +23,7 @@
 		<!-- wp:column {"width":"60%"} -->
 		<div class="wp-block-column" style="flex-basis:60%">
 			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
-			<p class="has-medium-font-size" style="line-height:2.2">陰陽五行・八字は、生まれた年・月・日・時の四つの柱と五行の調和から、その人の持って生まれた運命を読み解く東洋占術です。さらにタローデパリのカードリーディングを通じて、今この瞬間のメッセージをお届けします。</p>
+			<p class="has-medium-font-size" style="line-height:2.2">陰陽五行・八字は、生まれた年・月・日・時の八つの元素と五行の調和から、その人の持って生まれた運命を読み解く東洋占術です。さらにタローデパリのカードリーディングを通じて、今この瞬間のメッセージをお届けします。</p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
 			<p class="has-medium-font-size" style="line-height:2.2">士観道とは、人を観る事に特化したロジックであり、今貴方がどこにいるのか、これからどうするのかを一緒に見ていきながら、後ろ向きを前向きに持っていき、どうすれば貴方がバランス良くインプットやアウトプットをすれば良いのかを考えて行きましょう。</p>
@@ -37,7 +37,7 @@
 			<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
 			<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
 				<!-- wp:button {"className":"is-style-gold-outline"} -->
-				<div class="wp-block-button is-style-gold-outline"><a class="wp-block-button__link wp-element-button" href="/profile/">占い師について</a></div>
+				<div class="wp-block-button is-style-gold-outline"><a class="wp-block-button__link wp-element-button" href="/profile/">プロフィール</a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->

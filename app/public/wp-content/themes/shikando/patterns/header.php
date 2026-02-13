@@ -22,7 +22,7 @@
 			<!-- /wp:group -->
 			<!-- wp:navigation {"textColor":"base","overlayBackgroundColor":"accent-2","overlayTextColor":"base","style":{"typography":{"letterSpacing":"0.08em","fontWeight":"400"}},"fontSize":"small","layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap"}} -->
 				<!-- wp:navigation-link {"label":"ホーム","url":"/"} /-->
-				<!-- wp:navigation-link {"label":"占い師紹介","url":"/profile/"} /-->
+				<!-- wp:navigation-link {"label":"プロフィール","url":"/profile/"} /-->
 				<!-- wp:navigation-link {"label":"サービス・料金","url":"/services/"} /-->
 				<!-- wp:navigation-link {"label":"ブログ","url":"/blog/"} /-->
 				<!-- wp:navigation-link {"label":"ご予約・お問い合わせ","url":"/contact/"} /-->

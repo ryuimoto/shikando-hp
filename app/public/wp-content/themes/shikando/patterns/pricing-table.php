@@ -22,7 +22,7 @@
 				<tr><th>コース</th><th>時間</th><th>料金（税込）</th></tr>
 			</thead>
 			<tbody>
-				<tr><td>お試し鑑定</td><td>30分</td><td>無料</td></tr>
+				<tr><td>お試し鑑定(初回のみ)</td><td>30分</td><td>無料</td></tr>
 				<tr><td>スタンダード鑑定</td><td>30分</td><td>¥3,000</td></tr>
 				<tr><td>じっくり鑑定</td><td>60分</td><td>¥6,000</td></tr>
 				<tr><td>じっくり鑑定</td><td>90分</td><td>¥9,000</td></tr>
@@ -42,10 +42,8 @@
 				<tr><th>コース</th><th>内容</th><th>料金（税込）</th></tr>
 			</thead>
 			<tbody>
-				<tr><td>ワンポイント鑑定</td><td>質問1つ</td><td>¥3,000</td></tr>
-				<tr><td>総合鑑定</td><td>質問3つまで</td><td>¥5,000</td></tr>
-				<tr><td>命式詳細鑑定</td><td>命式の詳細解説付き</td><td>¥8,000</td></tr>
-				<tr><td>相性鑑定</td><td>お二人の相性を鑑定</td><td>¥6,000</td></tr>
+				<tr><td>ワンポイント鑑定(初回のみ無料)</td><td>質問1つ(※1問１答)</td><td>¥1,000</td></tr>
+				<tr><td>スリーポイント鑑定</td><td>質問3つまで</td><td>¥3,000</td></tr>
 			</tbody>
 		</table>
 	</figure>
@@ -59,7 +57,7 @@
 		<!-- wp:list {"fontSize":"medium"} -->
 		<ul class="has-medium-font-size">
 			<li>生年月日（西暦）</li>
-			<li>出生時刻（わかる範囲で）</li>
+			<li>出生時刻（必須）</li>
 			<li>ご相談内容</li>
 		</ul>
 		<!-- /wp:list -->

@@ -416,6 +416,9 @@ function replaceContent(html) {
     ['陰陽五行・八字の研究歴：○年', '陰陽五行・タローデパリの研究歴：7年'],
     ['タローデパリの研究歴：○年', ''],
     ['資格・認定：○○', '資格・認定：タローデパリ認定講師'],
+    // 経歴・資格セクションの後に修了証画像を挿入
+    ['<li>資格・認定：タローデパリ認定講師</li>\n</ul>',
+     `<li>資格・認定：タローデパリ認定講師</li>\n</ul>\n\n<figure class="wp-block-image size-large shikando-certificate"><img src="/wp-content/themes/shikando/assets/images/taro-de-paris-certificate.jpg" alt="タローデパリ認定講師 修了証" style="max-width:500px;width:100%;height:auto;border-radius:2px;box-shadow:0 2px 12px rgba(26,26,26,0.10)"></figure>`],
   ];
 
   for (const [from, to] of replacements) {

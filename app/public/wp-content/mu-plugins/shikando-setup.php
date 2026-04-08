@@ -288,7 +288,7 @@ function shikando_profile_content() {
 <!-- wp:list {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
 <ul class="has-medium-font-size" style="line-height:2.2">
 <li>陰陽五行・タローデパリの研究歴：7年</li>
-<li>資格・認定：タローデパリ認定講師</li>
+<li>資格・認定：タローデパリ認定リーダー</li>
 </ul>
 <!-- /wp:list -->
 

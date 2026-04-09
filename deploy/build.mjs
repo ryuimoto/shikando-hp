@@ -227,11 +227,9 @@ async function main() {
   // 7. robots.txt 生成
   await writeFile(join(OUTPUT, 'robots.txt'), 'User-agent: *\nAllow: /\n', 'utf-8');
 
-  // 8. vercel.json を public/ にコピー
-  const vercelJsonSrc = join(__dirname, 'vercel.json');
-  if (existsSync(vercelJsonSrc)) {
-    await copyFile(vercelJsonSrc, join(OUTPUT, 'vercel.json'));
-  }
+  // 8. 予約ページを生成
+  console.log('  予約ページを生成中...');
+  await generateReservationPages();
 
   console.log('');
   console.log('  ================================');
@@ -239,7 +237,7 @@ async function main() {
   console.log(`  出力先: ${OUTPUT}`);
   console.log('');
   console.log('  次のステップ:');
-  console.log('    cd deploy/public && npx vercel');
+  console.log('    cd deploy && npx vercel');
   console.log('');
 }
 
@@ -419,6 +417,8 @@ function replaceContent(html) {
     // 経歴・資格セクションの後に修了証画像を挿入
     ['<li>資格・認定：タローデパリ認定リーダー</li>\n</ul>',
      `<li>資格・認定：タローデパリ認定リーダー</li>\n</ul>\n\n<figure class="wp-block-image size-large shikando-certificate"><img src="/wp-content/themes/shikando/assets/images/taro-de-paris-certificate.jpg" alt="タローデパリ認定リーダー 修了証" style="max-width:500px;width:100%;height:auto;border-radius:2px;box-shadow:0 2px 12px rgba(26,26,26,0.10)"></figure>`],
+    // CTA ボタンのリンクを予約ページに変更
+    ['href="/contact/">ご予約・お問い合わせ</a>', 'href="/reservation/">ご予約はこちら</a>'],
   ];
 
   for (const [from, to] of replacements) {
@@ -572,6 +572,297 @@ function findFiles(dir, ext) {
   }
   return results;
 }
+
+/**
+ * 予約ページ・成功ページ・キャンセルページを生成
+ */
+async function generateReservationPages() {
+  // 既存ページをテンプレートとして利用（services ページからhead/header/footerを取得）
+  let template;
+  try {
+    template = await readFile(join(OUTPUT, 'services/index.html'), 'utf-8');
+  } catch {
+    console.log('    SKIP (テンプレートページが見つかりません)');
+    return;
+  }
+
+  // head部分を抽出（<head>〜</head>）
+  const headMatch = template.match(/<head[\s\S]*?<\/head>/);
+  // header部分を抽出（<header〜最初の</header>）
+  const headerMatch = template.match(/<header[\s\S]*?<\/header>/);
+  // footer部分を抽出（最後の<footer〜</footer>）
+  const footerMatches = template.match(/<footer[\s\S]*<\/footer>/);
+
+  if (!headMatch || !headerMatch || !footerMatches) {
+    console.log('    SKIP (テンプレートの解析に失敗)');
+    return;
+  }
+
+  let head = headMatch[0];
+  const header = headerMatch[0];
+  const footer = footerMatches[0];
+
+  // 予約ページ用にheadを加工
+  head = head.replace(/<title>.*?<\/title>/, '<title>ご予約 &#8211; 士観道（しかんどう）</title>');
+  head = head.replace('</head>',
+    '  <link rel="stylesheet" href="/assets/css/reservation.css">\n</head>');
+
+  const buildPage = (title, bodyContent, extraScripts = '') => `<!DOCTYPE html>
+<html lang="ja">
+${head}
+<body class="page-template-default page">
+${header}
+<main class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70)">
+<div class="wp-block-group" style="max-width:960px;margin:0 auto;padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30)">
+<h1 class="wp-block-heading has-text-align-center has-x-large-font-size" style="letter-spacing:0.15em;margin-bottom:0.5em">${title}</h1>
+${bodyContent}
+</div>
+</main>
+${footer}
+${extraScripts}
+</body>
+</html>`;
+
+  // ===== 予約ページ =====
+  const reservationHtml = buildPage('ご予約', RESERVATION_BODY, '<script src="/assets/js/reservation.js"></script>');
+  const reservationDir = join(OUTPUT, 'reservation');
+  await mkdir(reservationDir, { recursive: true });
+  await writeFile(join(reservationDir, 'index.html'), reservationHtml, 'utf-8');
+  console.log('    /reservation/ ... OK');
+
+  // ===== 成功ページ =====
+  const successHead = head.replace(
+    /<title>.*?<\/title>/,
+    '<title>ご予約完了 &#8211; 士観道（しかんどう）</title>'
+  );
+  const successHtml = `<!DOCTYPE html>
+<html lang="ja">
+${successHead}
+<body class="page-template-default page">
+${header}
+<main class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70)">
+<div class="wp-block-group" style="max-width:720px;margin:0 auto;padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);text-align:center">
+<h1 class="wp-block-heading has-text-align-center has-x-large-font-size" style="letter-spacing:0.15em;margin-bottom:0.5em">ご予約ありがとうございます</h1>
+<p class="has-medium-font-size" style="line-height:2.2">ご予約が完了いたしました。<br>確認メールをお送りしておりますのでご確認ください。</p>
+<p class="has-medium-font-size" style="line-height:2.2">セッション当日を楽しみにお待ちしております。</p>
+<div style="margin-top:2rem">
+<a href="/" class="wp-block-button__link wp-element-button" style="padding:0.8em 2.5em;font-size:1rem">トップページへ戻る</a>
+</div>
+</div>
+</main>
+${footer}
+</body>
+</html>`;
+  const successDir = join(OUTPUT, 'reservation', 'success');
+  await mkdir(successDir, { recursive: true });
+  await writeFile(join(successDir, 'index.html'), successHtml, 'utf-8');
+  console.log('    /reservation/success/ ... OK');
+
+  // ===== キャンセルページ =====
+  const cancelHead = head.replace(
+    /<title>.*?<\/title>/,
+    '<title>予約キャンセル &#8211; 士観道（しかんどう）</title>'
+  );
+  const cancelHtml = `<!DOCTYPE html>
+<html lang="ja">
+${cancelHead}
+<body class="page-template-default page">
+${header}
+<main class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70)">
+<div class="wp-block-group" style="max-width:720px;margin:0 auto;padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);text-align:center">
+<h1 class="wp-block-heading has-text-align-center has-x-large-font-size" style="letter-spacing:0.15em;margin-bottom:0.5em">決済がキャンセルされました</h1>
+<p class="has-medium-font-size" style="line-height:2.2">決済が完了しませんでした。<br>もう一度お試しいただくか、お問い合わせください。</p>
+<div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+<a href="/reservation/" class="wp-block-button__link wp-element-button" style="padding:0.8em 2.5em;font-size:1rem">予約ページに戻る</a>
+<a href="/contact/" class="wp-block-button__link wp-element-button" style="padding:0.8em 2.5em;font-size:1rem;background:transparent;color:var(--wp--preset--color--contrast);border:1px solid currentColor">お問い合わせ</a>
+</div>
+</div>
+</main>
+${footer}
+</body>
+</html>`;
+  const cancelDir = join(OUTPUT, 'reservation', 'cancel');
+  await mkdir(cancelDir, { recursive: true });
+  await writeFile(join(cancelDir, 'index.html'), cancelHtml, 'utf-8');
+  console.log('    /reservation/cancel/ ... OK');
+}
+
+// 予約ページの本文HTML
+const RESERVATION_BODY = `
+<div class="reservation-container">
+  <!-- ステップインジケーター -->
+  <div class="reservation-steps">
+    <div class="step active">
+      <span class="step-number">1</span>
+      <span class="step-label">コース</span>
+    </div>
+    <span class="step-arrow">▶</span>
+    <div class="step">
+      <span class="step-number">2</span>
+      <span class="step-label">日付</span>
+    </div>
+    <span class="step-arrow">▶</span>
+    <div class="step">
+      <span class="step-number">3</span>
+      <span class="step-label">時間</span>
+    </div>
+    <span class="step-arrow">▶</span>
+    <div class="step">
+      <span class="step-number">4</span>
+      <span class="step-label">情報</span>
+    </div>
+    <span class="step-arrow">▶</span>
+    <div class="step">
+      <span class="step-number">5</span>
+      <span class="step-label">確認</span>
+    </div>
+  </div>
+
+  <!-- ステップ1: コース選択 -->
+  <div class="step-content active" id="step-1">
+    <h2 class="step-title">コースを選択してください</h2>
+
+    <h3 class="course-group-title">電話セッション</h3>
+    <div class="course-cards">
+      <div class="course-card" data-course="phone-trial">
+        <div>
+          <div class="course-name">お試し鑑定</div>
+          <div class="course-detail">30分 ・ 初回限定</div>
+        </div>
+        <div class="course-price free">無料</div>
+      </div>
+      <div class="course-card" data-course="phone-standard">
+        <div>
+          <div class="course-name">スタンダード鑑定</div>
+          <div class="course-detail">30分</div>
+        </div>
+        <div class="course-price">¥3,000</div>
+      </div>
+      <div class="course-card" data-course="phone-deep-60">
+        <div>
+          <div class="course-name">じっくり鑑定</div>
+          <div class="course-detail">60分</div>
+        </div>
+        <div class="course-price">¥6,000</div>
+      </div>
+      <div class="course-card" data-course="phone-deep-90">
+        <div>
+          <div class="course-name">じっくり鑑定</div>
+          <div class="course-detail">90分</div>
+        </div>
+        <div class="course-price">¥9,000</div>
+      </div>
+    </div>
+
+    <h3 class="course-group-title">チャットセッション</h3>
+    <div class="course-cards">
+      <div class="course-card" data-course="chat-onepoint-free">
+        <div>
+          <div class="course-name">ワンポイント鑑定</div>
+          <div class="course-detail">質問1つ ・ 初回限定</div>
+        </div>
+        <div class="course-price free">無料</div>
+      </div>
+      <div class="course-card" data-course="chat-onepoint">
+        <div>
+          <div class="course-name">ワンポイント鑑定</div>
+          <div class="course-detail">質問1つ</div>
+        </div>
+        <div class="course-price">¥1,000</div>
+      </div>
+      <div class="course-card" data-course="chat-threepoint">
+        <div>
+          <div class="course-name">スリーポイント鑑定</div>
+          <div class="course-detail">質問3つまで</div>
+        </div>
+        <div class="course-price">¥3,000</div>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <span></span>
+      <button class="btn-next" id="step1-next" data-action="next" disabled>次へ</button>
+    </div>
+  </div>
+
+  <!-- ステップ2: 日付選択 -->
+  <div class="step-content" id="step-2">
+    <h2 class="step-title">日付を選択してください</h2>
+    <div class="calendar-wrapper">
+      <div class="calendar-header">
+        <button class="calendar-prev" aria-label="前月">◀</button>
+        <span class="month-title"></span>
+        <button class="calendar-next" aria-label="次月">▶</button>
+      </div>
+      <div class="calendar-grid"></div>
+    </div>
+    <div class="step-nav">
+      <button class="btn-back" data-action="back">戻る</button>
+      <button class="btn-next" id="step2-next" data-action="next" disabled>次へ</button>
+    </div>
+  </div>
+
+  <!-- ステップ3: 時間選択 -->
+  <div class="step-content" id="step-3">
+    <h2 class="step-title">時間を選択してください</h2>
+    <div class="time-slots-container">
+      <div class="time-slots-loading">日付を選択すると空き時間が表示されます</div>
+    </div>
+    <div class="step-nav">
+      <button class="btn-back" data-action="back">戻る</button>
+      <button class="btn-next" id="step3-next" data-action="next" disabled>次へ</button>
+    </div>
+  </div>
+
+  <!-- ステップ4: お客様情報入力 -->
+  <div class="step-content" id="step-4">
+    <h2 class="step-title">お客様情報を入力してください</h2>
+    <form id="reservation-form" class="reservation-form" onsubmit="return false">
+      <div class="form-group">
+        <label>お名前<span class="required">*</span></label>
+        <input type="text" name="name" required placeholder="例: 山田 太郎" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label>メールアドレス<span class="required">*</span></label>
+        <input type="email" name="email" required placeholder="例: example@email.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label>電話番号<span class="required">*</span></label>
+        <input type="tel" name="phone" required placeholder="例: 090-1234-5678" autocomplete="tel">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>生年月日（西暦）<span class="required">*</span></label>
+          <input type="date" name="birthdate" required>
+        </div>
+        <div class="form-group">
+          <label>出生時刻<span class="required">*</span></label>
+          <input type="time" name="birthtime" required>
+          <span class="form-hint">不明な場合はおおよその時刻をご入力ください</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>ご相談内容</label>
+        <textarea name="message" rows="4" placeholder="ご相談されたい内容をお書きください"></textarea>
+      </div>
+    </form>
+    <div class="step-nav">
+      <button class="btn-back" data-action="back">戻る</button>
+      <button class="btn-next" id="step4-next" data-action="next" disabled>確認画面へ</button>
+    </div>
+  </div>
+
+  <!-- ステップ5: 確認・送信 -->
+  <div class="step-content" id="step-5">
+    <h2 class="step-title">ご予約内容の確認</h2>
+    <div class="confirm-body"></div>
+    <button class="btn-submit" id="btn-submit" data-action="submit">予約・決済に進む</button>
+    <div class="step-nav" style="margin-top:1rem">
+      <button class="btn-back" data-action="back">修正する</button>
+    </div>
+  </div>
+</div>
+`;
 
 // ===== 実行 =====
 main().catch(err => {

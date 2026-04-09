@@ -6,7 +6,11 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "deploy": "node build.mjs && cd public && npx vercel --prod",
-    "preview": "node build.mjs && cd public && npx vercel"
+    "deploy": "node build.mjs && npx vercel --prod",
+    "preview": "node build.mjs && npx vercel"
+  },
+  "dependencies": {
+    "stripe": "^17.0.0",
+    "googleapis": "^144.0.0"
   }
 }

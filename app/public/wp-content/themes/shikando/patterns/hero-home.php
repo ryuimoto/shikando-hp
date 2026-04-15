@@ -41,7 +41,7 @@
 			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
 			<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--50)">
 				<!-- wp:button -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/contact/">無料相談を予約する</a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/reservation/">無料相談を予約する</a></div>
 				<!-- /wp:button -->
 				<!-- wp:button {"className":"is-style-gold-outline"} -->
 				<div class="wp-block-button is-style-gold-outline"><a class="wp-block-button__link wp-element-button" href="/services/">サービスを見る</a></div>

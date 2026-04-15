@@ -368,7 +368,7 @@ function shikando_contact_content() {
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"2"}},"fontSize":"medium"} -->
-<p class="has-medium-font-size" style="line-height:2">ご予約・お問い合わせは下記フォームよりお気軽にどうぞ。<br>通常24時間以内にご返信いたします。</p>
+<p class="has-medium-font-size" style="line-height:2">セッションのご予約は<a href="/reservation/">ご予約ページ</a>よりお願いいたします。<br>その他のお問い合わせは下記までお気軽にどうぞ。</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"border":{"left":{"color":"var:preset|color|accent-1","width":"3px"}}},"layout":{"type":"constrained"}} -->
@@ -386,16 +386,24 @@ function shikando_contact_content() {
 <!-- /wp:group -->
 
 <!-- wp:heading {"level":3,"style":{"typography":{"letterSpacing":"0.1em"},"spacing":{"margin":{"top":"var:preset|spacing|50"}}},"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="letter-spacing:0.1em;margin-top:var(--wp--preset--spacing--50)">お問い合わせフォーム</h3>
+<h3 class="wp-block-heading has-large-font-size" style="letter-spacing:0.1em;margin-top:var(--wp--preset--spacing--50)">お問い合わせ先</h3>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"className":"is-style-gold-line","style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|40"}}}} -->
 <hr class="wp-block-separator is-style-gold-line" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--40)"/>
 <!-- /wp:separator -->
 
-<!-- wp:paragraph {"textColor":"accent-4","fontSize":"small"} -->
-<p class="has-accent-4-color has-text-color has-small-font-size">※ Contact Form 7 プラグインをインストール後、ここにフォームのショートコードを挿入してください。<br>例: [contact-form-7 id="xxx" title="お問い合わせ"]</p>
+<!-- wp:paragraph {"fontSize":"medium","style":{"typography":{"lineHeight":"2"}}} -->
+<p class="has-medium-font-size" style="line-height:2">一般的なご質問・ご相談はメールにて承ります。<br>通常24時間以内にご返信いたします。</p>
 <!-- /wp:paragraph -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
+<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/reservation/">ご予約ページへ</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
 
 </div>
 <!-- /wp:group -->';

@@ -19,7 +19,7 @@
 	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
 	<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
 		<!-- wp:button {"fontSize":"medium"} -->
-		<div class="wp-block-button has-custom-font-size has-medium-font-size"><a class="wp-block-button__link wp-element-button" href="/contact/">ご予約・お問い合わせ</a></div>
+		<div class="wp-block-button has-custom-font-size has-medium-font-size"><a class="wp-block-button__link wp-element-button" href="/reservation/">ご予約はこちら</a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->

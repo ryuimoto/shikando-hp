@@ -36,7 +36,7 @@
 				<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 				<div class="wp-block-buttons">
 					<!-- wp:button -->
-					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/contact/">お問い合わせ</a></div>
+					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/reservation/">ご予約はこちら</a></div>
 					<!-- /wp:button -->
 				</div>
 				<!-- /wp:buttons -->

@@ -38,7 +38,8 @@
 				<!-- wp:navigation-link {"label":"プロフィール","url":"/profile/"} /-->
 				<!-- wp:navigation-link {"label":"サービス・料金","url":"/services/"} /-->
 				<!-- wp:navigation-link {"label":"ブログ・コラム","url":"/blog/"} /-->
-				<!-- wp:navigation-link {"label":"ご予約・お問い合わせ","url":"/contact/"} /-->
+				<!-- wp:navigation-link {"label":"ご予約","url":"/reservation/"} /-->
+				<!-- wp:navigation-link {"label":"お問い合わせ","url":"/contact/"} /-->
 			<!-- /wp:navigation -->
 		</div>
 		<!-- /wp:column -->

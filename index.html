@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>士観道（しかんどう） | 陰陽五行・八字 / タローデパリ</title>
+    <meta
+      name="description"
+      content="陰陽五行・八字 / タローデパリによる本格オンラインセッション。対面・電話・チャットでご相談いただけます。"
+    >
+    <style>
+      :root {
+        --paper: #f8f4ec;
+        --ink: #1d1a16;
+        --muted: #6e665b;
+        --charcoal: #171412;
+        --gold: #c5a572;
+        --gold-dark: #9c7b46;
+        --moss: #59634d;
+        --plum: #6f5876;
+        --line: rgba(29, 26, 22, 0.14);
+        --shadow: 0 18px 50px rgba(29, 26, 22, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", system-ui, sans-serif;
+        line-height: 1.8;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 16px clamp(20px, 5vw, 64px);
+        color: #fff;
+        background: rgba(23, 20, 18, 0.92);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .brand {
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav {
+        display: flex;
+        gap: clamp(14px, 3vw, 32px);
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 14px;
+      }
+
+      .nav a {
+        text-decoration: none;
+      }
+
+      .hero {
+        min-height: calc(100vh - 65px);
+        display: grid;
+        place-items: center;
+        padding: 76px 20px 88px;
+        color: #fff;
+        background:
+          linear-gradient(rgba(23, 20, 18, 0.82), rgba(23, 20, 18, 0.86)),
+          linear-gradient(135deg, #171412 0%, #343126 52%, #201829 100%);
+      }
+
+      .hero-inner {
+        width: min(760px, 100%);
+        text-align: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 20px;
+        color: var(--gold);
+        font-size: 14px;
+        letter-spacing: 0.24em;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+        line-height: 1.45;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(56px, 11vw, 112px);
+        letter-spacing: 0.18em;
+      }
+
+      .kana {
+        margin: 10px 0 28px;
+        letter-spacing: 0.2em;
+      }
+
+      .gold-line {
+        width: 88px;
+        height: 1px;
+        margin: 0 auto 34px;
+        background: var(--gold);
+      }
+
+      .lead {
+        margin: 0;
+        font-size: clamp(19px, 3vw, 27px);
+        line-height: 2;
+      }
+
+      .sublead {
+        margin: 22px 0 0;
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 42px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 12px 24px;
+        border: 1px solid var(--gold);
+        background: var(--gold);
+        color: #171412;
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--gold);
+      }
+
+      .section {
+        padding: clamp(64px, 9vw, 108px) clamp(20px, 5vw, 64px);
+      }
+
+      .section-inner {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+      }
+
+      .section-title {
+        margin: 0;
+        text-align: center;
+        font-size: clamp(30px, 5vw, 48px);
+        letter-spacing: 0.12em;
+      }
+
+      .section-title + .gold-line {
+        margin-top: 24px;
+        margin-bottom: 46px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .card {
+        min-height: 100%;
+        padding: 34px 28px;
+        background: rgba(255, 255, 255, 0.62);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .card h3 {
+        margin: 0 0 18px;
+        color: var(--gold-dark);
+        text-align: center;
+        font-size: 24px;
+        letter-spacing: 0.08em;
+      }
+
+      .card p {
+        margin: 0;
+      }
+
+      .price {
+        margin-top: 22px;
+        color: var(--gold-dark);
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      .philosophy {
+        color: #fff;
+        background: var(--moss);
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+        gap: clamp(32px, 6vw, 72px);
+        align-items: start;
+      }
+
+      .split h2 {
+        margin: 0;
+        color: var(--gold);
+        font-size: clamp(32px, 5vw, 52px);
+        letter-spacing: 0.12em;
+      }
+
+      .split p {
+        margin: 0 0 18px;
+      }
+
+      .reservation {
+        color: #fff;
+        background: var(--charcoal);
+        text-align: center;
+      }
+
+      .reservation h2 {
+        margin: 0 0 18px;
+        color: var(--gold);
+        font-size: clamp(28px, 5vw, 44px);
+        letter-spacing: 0.12em;
+      }
+
+      .contact-box {
+        width: min(720px, 100%);
+        margin: 34px auto 0;
+        padding: 28px;
+        border: 1px solid rgba(197, 165, 114, 0.45);
+        text-align: left;
+      }
+
+      .contact-box dl {
+        display: grid;
+        grid-template-columns: 8em 1fr;
+        gap: 10px 18px;
+        margin: 0;
+      }
+
+      .contact-box dt {
+        color: var(--gold);
+        font-weight: 700;
+      }
+
+      .contact-box dd {
+        margin: 0;
+      }
+
+      .site-footer {
+        padding: 28px 20px;
+        color: rgba(255, 255, 255, 0.72);
+        background: #100e0c;
+        text-align: center;
+        font-size: 13px;
+      }
+
+      @media (max-width: 820px) {
+        .site-header {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .nav {
+          width: 100%;
+          overflow-x: auto;
+          padding-bottom: 2px;
+          white-space: nowrap;
+        }
+
+        .hero {
+          min-height: calc(100vh - 107px);
+        }
+
+        .cards,
+        .split {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-box dl {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="士観道 トップへ">士観道</a>
+      <nav class="nav" aria-label="主要ナビゲーション">
+        <a href="#services">サービス</a>
+        <a href="#philosophy">士観道とは</a>
+        <a href="#reservation">ご予約</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <p class="eyebrow">陰陽五行・八字 / タローデパリ</p>
+          <h1 id="hero-title">士観道</h1>
+          <p class="kana">しかんどう</p>
+          <div class="gold-line" aria-hidden="true"></div>
+          <p class="lead">あなたの運命の道筋を<br>古来の知恵で紐解きます</p>
+          <p class="sublead">対面セッション・電話セッション・チャットセッションで、いつでもどこからでもご相談いただけます。</p>
+          <div class="actions">
+            <a class="button" href="#reservation">無料相談を予約する</a>
+            <a class="button secondary" href="#services">サービスを見る</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="section-inner">
+          <h2 class="section-title">セッションメニュー</h2>
+          <div class="gold-line" aria-hidden="true"></div>
+          <div class="cards">
+            <article class="card">
+              <h3>対面セッション</h3>
+              <p>直接お会いして、陰陽五行・八字やタローデパリに基づいた鑑定を行います。対面ならではの深い対話が可能です。</p>
+              <p class="price">お問い合わせください</p>
+            </article>
+            <article class="card">
+              <h3>電話セッション</h3>
+              <p>声を通じてあなたのエネルギーを読み取り、陰陽五行・八字やタローデパリに基づいた詳細な鑑定をお届けします。</p>
+              <p class="price">30分 ¥5,000〜</p>
+            </article>
+            <article class="card">
+              <h3>チャットセッション</h3>
+              <p>テキストでじっくりとご相談。生年月日からあなたの命式を詳しく分析いたします。</p>
+              <p class="price">1回 ¥3,000〜</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="philosophy" class="section philosophy">
+        <div class="section-inner split">
+          <h2>士観道の<br>セッションとは</h2>
+          <div>
+            <p>陰陽五行・八字は、生まれた年・月・日・時の八つの元素と五行の調和から、その人の持って生まれた運命を読み解く東洋占術です。</p>
+            <p>士観道とは、人を観る事に特化したロジックであり、今貴方がどこにいるのか、これからどうするのかを一緒に見ていきながら、前向きな選択を探していくための道です。</p>
+            <p>生年月日と生まれた時間がわかると、より精度の高い鑑定が可能です。事前にお調べいただけると助かります。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="reservation" class="section reservation">
+        <div class="section-inner">
+          <h2>まずはお気軽にご相談ください</h2>
+          <p>初めての方もお気軽にお問い合わせください。あなたの運命の扉を開くお手伝いをいたします。</p>
+          <div class="contact-box">
+            <dl>
+              <dt>対応形式</dt>
+              <dd>対面・電話・チャット</dd>
+              <dt>鑑定内容</dt>
+              <dd>陰陽五行・八字 / タローデパリ</dd>
+              <dt>ご予約</dt>
+              <dd>正式な予約フォーム公開まで、管理者へ直接お問い合わせください。</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>&copy; 士観道（しかんどう）</small>
+    </footer>
+  </body>
+</html>

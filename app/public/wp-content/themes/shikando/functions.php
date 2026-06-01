@@ -92,5 +92,23 @@ function shikando_block_styles() {
 			}
 		',
 	) );
+
+	register_block_style( 'core/button', array(
+		'name'         => 'line-button',
+		'label'        => 'LINEボタン',
+		'inline_style' => '
+			.wp-block-button.is-style-line-button .wp-block-button__link {
+				background: #06C755;
+				color: #FFFFFF;
+				border: none;
+				font-weight: 700;
+				letter-spacing: 0.08em;
+			}
+			.wp-block-button.is-style-line-button .wp-block-button__link:hover {
+				background: #05A847;
+				color: #FFFFFF;
+			}
+		',
+	) );
 }
 add_action( 'init', 'shikando_block_styles' );

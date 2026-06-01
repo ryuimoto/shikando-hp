@@ -12,8 +12,12 @@
 <div class="wp-block-group" style="margin-top:0;margin-bottom:0">
 
 	<!-- wp:heading {"level":3,"style":{"typography":{"letterSpacing":"0.1em"}},"fontSize":"large","textColor":"accent-2"} -->
-	<h3 class="wp-block-heading has-accent-2-color has-text-color has-large-font-size" style="letter-spacing:0.1em">電話セッション メニュー</h3>
+	<h3 class="wp-block-heading has-accent-2-color has-text-color has-large-font-size" style="letter-spacing:0.1em">音声通話セッション メニュー</h3>
 	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"fontSize":"small","textColor":"contrast","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
+	<p class="has-contrast-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--30)">通話手段：LINE通話 または Google Meet（音声）</p>
+	<!-- /wp:paragraph -->
 
 	<!-- wp:table {"hasFixedLayout":true,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"fontSize":"medium"} -->
 	<figure class="wp-block-table has-custom-font-size has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--60)">
@@ -34,6 +38,10 @@
 	<!-- wp:heading {"level":3,"style":{"typography":{"letterSpacing":"0.1em"}},"fontSize":"large","textColor":"accent-2"} -->
 	<h3 class="wp-block-heading has-accent-2-color has-text-color has-large-font-size" style="letter-spacing:0.1em">チャットセッション メニュー</h3>
 	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"fontSize":"small","textColor":"contrast","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
+	<p class="has-contrast-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--30)">やりとり：LINEまたはメール</p>
+	<!-- /wp:paragraph -->
 
 	<!-- wp:table {"hasFixedLayout":true,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"fontSize":"medium"} -->
 	<figure class="wp-block-table has-custom-font-size has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--60)">

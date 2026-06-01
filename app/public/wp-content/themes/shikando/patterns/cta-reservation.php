@@ -16,10 +16,13 @@
 	<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"2"}},"fontSize":"medium"} -->
 	<p class="has-text-align-center has-medium-font-size" style="line-height:2">初めての方もお気軽にお問い合わせください。<br>あなたの運命の扉を開くお手伝いをいたします。</p>
 	<!-- /wp:paragraph -->
-	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
+	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|30"}}} -->
 	<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
-		<!-- wp:button {"fontSize":"medium"} -->
-		<div class="wp-block-button has-custom-font-size has-medium-font-size"><a class="wp-block-button__link wp-element-button" href="/reservation/">ご予約はこちら</a></div>
+		<!-- wp:button {"className":"is-style-line-button","fontSize":"medium"} -->
+		<div class="wp-block-button has-custom-font-size has-medium-font-size is-style-line-button"><a class="wp-block-button__link wp-element-button" href="LINE_URL_HERE" target="_blank" rel="noopener">LINEで予約する</a></div>
+		<!-- /wp:button -->
+		<!-- wp:button {"className":"is-style-gold-outline","fontSize":"medium"} -->
+		<div class="wp-block-button has-custom-font-size has-medium-font-size is-style-gold-outline"><a class="wp-block-button__link wp-element-button" href="/reservation/">予約ページを見る</a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->

@@ -20,14 +20,25 @@
 				<!-- wp:site-title {"level":0,"style":{"typography":{"fontFamily":"var:preset|font-family|shippori-mincho","fontWeight":"700","letterSpacing":"0.15em"}},"fontSize":"large"} /-->
 			</div>
 			<!-- /wp:group -->
-			<!-- wp:navigation {"textColor":"base","overlayBackgroundColor":"accent-2","overlayTextColor":"base","style":{"typography":{"letterSpacing":"0.08em","fontWeight":"400"}},"fontSize":"small","layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap"}} -->
-				<!-- wp:navigation-link {"label":"ホーム","url":"/"} /-->
-				<!-- wp:navigation-link {"label":"プロフィール","url":"/profile/"} /-->
-				<!-- wp:navigation-link {"label":"サービス・料金","url":"/services/"} /-->
-				<!-- wp:navigation-link {"label":"ブログ","url":"/blog/"} /-->
-				<!-- wp:navigation-link {"label":"ご予約","url":"/reservation/"} /-->
-				<!-- wp:navigation-link {"label":"お問い合わせ","url":"/contact/"} /-->
-			<!-- /wp:navigation -->
+			<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} -->
+			<div class="wp-block-group">
+				<!-- wp:navigation {"textColor":"base","overlayBackgroundColor":"accent-2","overlayTextColor":"base","style":{"typography":{"letterSpacing":"0.08em","fontWeight":"400"}},"fontSize":"small","layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap"}} -->
+					<!-- wp:navigation-link {"label":"ホーム","url":"/"} /-->
+					<!-- wp:navigation-link {"label":"プロフィール","url":"/profile/"} /-->
+					<!-- wp:navigation-link {"label":"サービス・料金","url":"/services/"} /-->
+					<!-- wp:navigation-link {"label":"ブログ","url":"/blog/"} /-->
+					<!-- wp:navigation-link {"label":"ご予約","url":"/reservation/"} /-->
+					<!-- wp:navigation-link {"label":"お問い合わせ","url":"/contact/"} /-->
+				<!-- /wp:navigation -->
+				<!-- wp:buttons {"layout":{"type":"flex"}} -->
+				<div class="wp-block-buttons">
+					<!-- wp:button {"className":"is-style-line-button","fontSize":"small"} -->
+					<div class="wp-block-button has-custom-font-size has-small-font-size is-style-line-button"><a class="wp-block-button__link wp-element-button" href="LINE_URL_HERE" target="_blank" rel="noopener">LINEで相談</a></div>
+					<!-- /wp:button -->
+				</div>
+				<!-- /wp:buttons -->
+			</div>
+			<!-- /wp:group -->
 		</div>
 		<!-- /wp:group -->
 	</div>

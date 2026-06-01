@@ -136,7 +136,12 @@ function shikando_run_setup() {
 			'content' => '',
 		),
 		array(
-			'title'   => 'ご予約・お問い合わせ',
+			'title'   => 'ご予約',
+			'slug'    => 'reservation',
+			'content' => shikando_reservation_content(),
+		),
+		array(
+			'title'   => 'お問い合わせ',
 			'slug'    => 'contact',
 			'content' => shikando_contact_content(),
 		),
@@ -242,6 +247,7 @@ function shikando_update_pages() {
 	$updates = array(
 		'profile'        => 'shikando_profile_content',
 		'services'       => 'shikando_services_content',
+		'reservation'    => 'shikando_reservation_content',
 		'contact'        => 'shikando_contact_content',
 		'privacy-policy' => 'shikando_privacy_content',
 		'tokushoho'      => 'shikando_tokushoho_content',
@@ -350,10 +356,11 @@ function shikando_services_content() {
 
 <!-- wp:list {"ordered":true,"style":{"typography":{"lineHeight":"2.5"}},"fontSize":"medium"} -->
 <ol class="has-medium-font-size" style="line-height:2.5">
-<li><strong>お問い合わせ・ご予約</strong> — お問い合わせフォームよりご希望のコースと日時をお知らせください。</li>
+<li><strong>ご予約</strong> — LINE公式アカウントまたは予約フォームからご希望のコース・日時をお知らせください。</li>
 <li><strong>生年月日のご提供</strong> — 鑑定に必要な情報（生年月日・出生時刻・ご相談内容）をお送りください。</li>
-<li><strong>鑑定実施</strong> — ご予約日時に電話またはチャットにて鑑定いたします。</li>
-<li><strong>アフターフォロー</strong> — 鑑定後のご質問にもお答えいたします。</li>
+<li><strong>事前決済</strong> — お送りするStripe決済リンクよりクレジットカードでお支払いください（お試し鑑定は無料）。</li>
+<li><strong>鑑定実施</strong> — ご予約日時にLINE通話・Google Meet（音声）またはチャットにて鑑定いたします。</li>
+<li><strong>アフターフォロー</strong> — 鑑定後のご質問にもLINEまたはメールでお答えいたします。</li>
 </ol>
 <!-- /wp:list -->
 
@@ -361,6 +368,124 @@ function shikando_services_content() {
 <!-- /wp:group -->
 
 <!-- wp:pattern {"slug":"shikando/cta-reservation"} /-->';
+}
+
+function shikando_reservation_content() {
+	return '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+
+<!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"letterSpacing":"0.15em"}},"fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-text-align-center has-x-large-font-size" style="letter-spacing:0.15em">ご予約の流れ</h2>
+<!-- /wp:heading -->
+
+<!-- wp:separator {"className":"is-style-gold-line","style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|50"}}}} -->
+<hr class="wp-block-separator is-style-gold-line" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--50)"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"2"}},"fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size" style="line-height:2">ご予約はLINEまたは予約フォームの2通りで受付けております。<br>初めての方は<strong>初回お試し鑑定（30分・無料）</strong>からどうぞ。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
+<ol class="has-medium-font-size" style="line-height:2.2">
+<li><strong>LINEで友だち追加</strong>または<strong>予約フォームから日時選択</strong></li>
+<li><strong>必要情報をご連絡</strong>（生年月日・出生時刻・ご相談内容）</li>
+<li><strong>事前決済</strong>（Stripeの決済リンクをお送りします／お試し鑑定は無料）</li>
+<li><strong>当日、ご予約のお時間にLINE通話またはGoogle Meetで鑑定</strong></li>
+</ol>
+<!-- /wp:list -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:pattern {"slug":"shikando/cta-line"} /-->
+
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
+
+<!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"letterSpacing":"0.15em"}},"fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-text-align-center has-x-large-font-size" style="letter-spacing:0.15em">予約フォームから日時を選ぶ</h2>
+<!-- /wp:heading -->
+
+<!-- wp:separator {"className":"is-style-gold-line","style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|40"}}}} -->
+<hr class="wp-block-separator is-style-gold-line" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--40)"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"2"}},"fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size" style="line-height:2">空き枠カレンダーからご希望の日時を選択してください。<br>予約確定後、決済リンクとGoogle MeetのURLをメールでお送りします。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
+<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
+<!-- wp:button {"fontSize":"medium"} -->
+<div class="wp-block-button has-custom-font-size has-medium-font-size"><a class="wp-block-button__link wp-element-button" href="TIMEREX_URL_HERE" target="_blank" rel="noopener">予約フォームを開く</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:pattern {"slug":"shikando/pricing-table"} /-->
+
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+
+<!-- wp:heading {"level":2,"style":{"typography":{"letterSpacing":"0.1em"}},"fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-x-large-font-size" style="letter-spacing:0.1em">キャンセル規定</h2>
+<!-- /wp:heading -->
+
+<!-- wp:separator {"className":"is-style-gold-line","style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|40"}}}} -->
+<hr class="wp-block-separator is-style-gold-line" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--40)"/>
+<!-- /wp:separator -->
+
+<!-- wp:list {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
+<ul class="has-medium-font-size" style="line-height:2.2">
+<li><strong>前日まで</strong>のキャンセル・日程変更：無料</li>
+<li><strong>当日</strong>のキャンセル：料金の50%</li>
+<li><strong>無断キャンセル</strong>：料金の100%</li>
+<li>キャンセルのご連絡はLINEまたはメールにてお願いいたします</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":2,"style":{"typography":{"letterSpacing":"0.1em"},"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-x-large-font-size" style="letter-spacing:0.1em;margin-top:var(--wp--preset--spacing--60)">よくあるご質問</h2>
+<!-- /wp:heading -->
+
+<!-- wp:separator {"className":"is-style-gold-line","style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|40"}}}} -->
+<hr class="wp-block-separator is-style-gold-line" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--40)"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":3,"fontSize":"medium","textColor":"accent-2"} -->
+<h3 class="wp-block-heading has-accent-2-color has-text-color has-medium-font-size">Q. 出生時刻がわかりません</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2"}},"fontSize":"medium"} -->
+<p class="has-medium-font-size" style="line-height:2">A. 母子手帳に記載されている場合がございます。不明な場合は鑑定精度が下がりますが、可能な範囲で鑑定いたします。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"medium","textColor":"accent-2"} -->
+<h3 class="wp-block-heading has-accent-2-color has-text-color has-medium-font-size">Q. 通話手段は何になりますか？</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2"}},"fontSize":"medium"} -->
+<p class="has-medium-font-size" style="line-height:2">A. LINE通話（音声）またはGoogle Meet（音声）でご鑑定いたします。ご希望をお知らせください。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"medium","textColor":"accent-2"} -->
+<h3 class="wp-block-heading has-accent-2-color has-text-color has-medium-font-size">Q. 支払い方法を教えてください</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2"}},"fontSize":"medium"} -->
+<p class="has-medium-font-size" style="line-height:2">A. クレジットカード決済（Stripe）にて事前決済をお願いしております。予約確定後、決済リンクをお送りいたします。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"medium","textColor":"accent-2"} -->
+<h3 class="wp-block-heading has-accent-2-color has-text-color has-medium-font-size">Q. 対面での鑑定はできますか？</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2"}},"fontSize":"medium"} -->
+<p class="has-medium-font-size" style="line-height:2">A. 原則オンライン（LINE通話・Google Meet）での鑑定となります。対面をご希望の場合は個別にご相談ください。</p>
+<!-- /wp:paragraph -->
+
+</div>
+<!-- /wp:group -->';
 }
 
 function shikando_contact_content() {
@@ -379,7 +504,7 @@ function shikando_contact_content() {
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size">営業時間: 10:00 - 22:00<br>定休日: 不定休<br>セッション方法: 対面セッション / 電話セッション / チャットセッション</p>
+<p class="has-medium-font-size">営業時間: 10:00 - 22:00<br>定休日: 不定休<br>セッション方法: オンライン音声通話（LINE通話 / Google Meet）／チャットセッション</p>
 <!-- /wp:paragraph -->
 
 </div>
@@ -394,19 +519,13 @@ function shikando_contact_content() {
 <!-- /wp:separator -->
 
 <!-- wp:paragraph {"fontSize":"medium","style":{"typography":{"lineHeight":"2"}}} -->
-<p class="has-medium-font-size" style="line-height:2">一般的なご質問・ご相談はメールにて承ります。<br>通常24時間以内にご返信いたします。</p>
+<p class="has-medium-font-size" style="line-height:2">一般的なご質問・ご相談はLINEまたはメールにて承ります。<br>通常24時間以内にご返信いたします。</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
-<!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/reservation/">ご予約ページへ</a></div>
-<!-- /wp:button -->
 </div>
-<!-- /wp:buttons -->
+<!-- /wp:group -->
 
-</div>
-<!-- /wp:group -->';
+<!-- wp:pattern {"slug":"shikando/cta-line"} /-->';
 }
 
 function shikando_privacy_content() {
@@ -441,6 +560,23 @@ function shikando_privacy_content() {
 <p class="has-medium-font-size" style="line-height:2.2">法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。</p>
 <!-- /wp:paragraph -->
 
+<!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size">外部サービスの利用</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
+<p class="has-medium-font-size" style="line-height:2.2">当サイトでは、ご予約・鑑定・決済の運用にあたり、以下の外部サービスを利用しています。各サービスにおける個人情報の取り扱いは、それぞれの規約・プライバシーポリシーに準じます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"style":{"typography":{"lineHeight":"2.2"}},"fontSize":"medium"} -->
+<ul class="has-medium-font-size" style="line-height:2.2">
+<li><strong>LINE公式アカウント</strong>（LINEヤフー株式会社）：ご相談・予約受付・メッセージのやりとり</li>
+<li><strong>TimeRex</strong>（株式会社ミクステンド）：予約日時の調整</li>
+<li><strong>Stripe</strong>（Stripe, Inc.）：クレジットカード決済</li>
+<li><strong>Google Meet</strong>（Google LLC）：音声通話による鑑定</li>
+</ul>
+<!-- /wp:list -->
+
 </div>
 <!-- /wp:group -->';
 }
@@ -455,13 +591,16 @@ function shikando_tokushoho_content() {
 <tbody>
 <tr><td><strong>事業者名</strong></td><td>士観道</td></tr>
 <tr><td><strong>代表者</strong></td><td>（お名前を記載）</td></tr>
-<tr><td><strong>所在地</strong></td><td>（住所を記載）</td></tr>
-<tr><td><strong>電話番号</strong></td><td>（電話番号を記載）</td></tr>
+<tr><td><strong>所在地</strong></td><td>請求があった場合、遅滞なく開示いたします</td></tr>
+<tr><td><strong>電話番号</strong></td><td>請求があった場合、遅滞なく開示いたします</td></tr>
 <tr><td><strong>メールアドレス</strong></td><td>（メールアドレスを記載）</td></tr>
-<tr><td><strong>サービス内容</strong></td><td>陰陽五行・八字 / タローデパリによるセッション（対面セッション・電話セッション・チャットセッション）</td></tr>
-<tr><td><strong>料金</strong></td><td>サービス・料金ページをご確認ください</td></tr>
-<tr><td><strong>お支払い方法</strong></td><td>（お支払い方法を記載）</td></tr>
-<tr><td><strong>キャンセルポリシー</strong></td><td>鑑定前日までのキャンセルは無料。当日キャンセルは料金の50%をいただきます。</td></tr>
+<tr><td><strong>サービス内容</strong></td><td>陰陽五行・八字 / タローデパリによるオンラインセッション（音声通話セッション・チャットセッション）</td></tr>
+<tr><td><strong>料金</strong></td><td>サービス・料金ページをご確認ください（30分¥3,000〜）</td></tr>
+<tr><td><strong>お支払い方法</strong></td><td>クレジットカード決済（Stripe）／予約確定後にお送りする決済リンクより事前決済</td></tr>
+<tr><td><strong>お支払い時期</strong></td><td>予約確定後、鑑定実施前までに事前決済</td></tr>
+<tr><td><strong>サービス提供時期</strong></td><td>ご予約日時に、LINE通話またはGoogle Meet（音声）にて実施</td></tr>
+<tr><td><strong>キャンセルポリシー</strong></td><td>前日までのキャンセル・日程変更は無料／当日キャンセルは料金の50%／無断キャンセルは料金の100%をいただきます。<br>※役務提供の性質上、鑑定実施後の返金には応じかねます。</td></tr>
+<tr><td><strong>動作環境</strong></td><td>LINEアプリ または Google Meetが利用可能な端末・通信環境</td></tr>
 </tbody>
 </table>
 </figure>

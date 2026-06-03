@@ -412,13 +412,22 @@ function shikando_reservation_content() {
 <!-- /wp:separator -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"2"}},"fontSize":"medium"} -->
-<p class="has-text-align-center has-medium-font-size" style="line-height:2">空き枠カレンダーからご希望の日時を選択してください。<br>予約確定後、決済リンクとGoogle MeetのURLをメールでお送りします。</p>
+<p class="has-text-align-center has-medium-font-size" style="line-height:2">ご希望のコースを選び、空き枠から日時を選択してください。<br>予約確定後、決済リンク（お試し以外）とGoogle MeetのURLをメールでお送りします。</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
+<!-- wp:buttons {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|30"}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
-<!-- wp:button {"fontSize":"medium"} -->
-<div class="wp-block-button has-custom-font-size has-medium-font-size"><a class="wp-block-button__link wp-element-button" href="TIMEREX_URL_HERE" target="_blank" rel="noopener">予約フォームを開く</a></div>
+<!-- wp:button {"className":"is-style-gold-outline","fontSize":"medium","width":75} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-75 has-custom-font-size has-medium-font-size is-style-gold-outline"><a class="wp-block-button__link wp-element-button" href="https://timerex.net/s/shikando.0404_47cb/e65a617a" target="_blank" rel="noopener">お試し鑑定（30分・無料）を予約</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"fontSize":"medium","width":75} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-75 has-custom-font-size has-medium-font-size"><a class="wp-block-button__link wp-element-button" href="https://timerex.net/s/shikando.0404_47cb/1184eeee" target="_blank" rel="noopener">スタンダード鑑定（30分・¥3,000）を予約</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"fontSize":"medium","width":75} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-75 has-custom-font-size has-medium-font-size"><a class="wp-block-button__link wp-element-button" href="https://timerex.net/s/shikando.0404_47cb/8277238e" target="_blank" rel="noopener">じっくり鑑定（60分・¥6,000）を予約</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"fontSize":"medium","width":75} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-75 has-custom-font-size has-medium-font-size"><a class="wp-block-button__link wp-element-button" href="https://timerex.net/s/shikando.0404_47cb/d1a8f32e" target="_blank" rel="noopener">じっくり鑑定（90分・¥9,000）を予約</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

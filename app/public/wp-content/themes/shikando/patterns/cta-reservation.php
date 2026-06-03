@@ -19,7 +19,7 @@
 	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|30"}}} -->
 	<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
 		<!-- wp:button {"className":"is-style-line-button","fontSize":"medium"} -->
-		<div class="wp-block-button has-custom-font-size has-medium-font-size is-style-line-button"><a class="wp-block-button__link wp-element-button" href="LINE_URL_HERE" target="_blank" rel="noopener">LINEで予約する</a></div>
+		<div class="wp-block-button has-custom-font-size has-medium-font-size is-style-line-button"><a class="wp-block-button__link wp-element-button" href="https://lin.ee/VfNS64wM" target="_blank" rel="noopener">LINEで予約する</a></div>
 		<!-- /wp:button -->
 		<!-- wp:button {"className":"is-style-gold-outline","fontSize":"medium"} -->
 		<div class="wp-block-button has-custom-font-size has-medium-font-size is-style-gold-outline"><a class="wp-block-button__link wp-element-button" href="/reservation/">予約ページを見る</a></div>

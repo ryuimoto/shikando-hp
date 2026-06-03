@@ -33,7 +33,7 @@
 				<!-- wp:buttons {"layout":{"type":"flex"}} -->
 				<div class="wp-block-buttons">
 					<!-- wp:button {"className":"is-style-line-button","fontSize":"small"} -->
-					<div class="wp-block-button has-custom-font-size has-small-font-size is-style-line-button"><a class="wp-block-button__link wp-element-button" href="LINE_URL_HERE" target="_blank" rel="noopener">LINEで相談</a></div>
+					<div class="wp-block-button has-custom-font-size has-small-font-size is-style-line-button"><a class="wp-block-button__link wp-element-button" href="https://lin.ee/VfNS64wM" target="_blank" rel="noopener">LINEで相談</a></div>
 					<!-- /wp:button -->
 				</div>
 				<!-- /wp:buttons -->

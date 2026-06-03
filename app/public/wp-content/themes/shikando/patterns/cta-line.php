@@ -29,7 +29,7 @@
 		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
 		<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
 			<!-- wp:button {"className":"is-style-line-button","fontSize":"medium","width":75} -->
-			<div class="wp-block-button has-custom-width wp-block-button__width-75 has-custom-font-size has-medium-font-size is-style-line-button"><a class="wp-block-button__link wp-element-button" href="LINE_URL_HERE" target="_blank" rel="noopener">LINEで友だち追加して予約する</a></div>
+			<div class="wp-block-button has-custom-width wp-block-button__width-75 has-custom-font-size has-medium-font-size is-style-line-button"><a class="wp-block-button__link wp-element-button" href="https://lin.ee/VfNS64wM" target="_blank" rel="noopener">LINEで友だち追加して予約する</a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

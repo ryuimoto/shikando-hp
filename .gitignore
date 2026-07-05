@@ -1,0 +1,17 @@
+# Local by Flywheel auto-generated files
+app/.envrc
+logs/
+
+# Simply Static cache and generated files
+app/public/wp-content/uploads/simply-static/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# WordPress uploads (optional: comment out if you want to track them)
+# app/public/wp-content/uploads/

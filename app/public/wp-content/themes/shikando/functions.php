@@ -5,6 +5,12 @@
  * @package Shikando
  */
 
+// Google Search Console verification.
+function shikando_google_site_verification() {
+	echo '<meta name="google-site-verification" content="z2Jyz0YMYaXwKECzfBpjc5Vk9lF9WgTBcPrIzdzvQww" />' . "\n";
+}
+add_action( 'wp_head', 'shikando_google_site_verification' );
+
 // Enqueue Google Fonts for Japanese typography.
 function shikando_enqueue_fonts() {
 	$google_fonts_url = 'https://fonts.googleapis.com/css2?'
